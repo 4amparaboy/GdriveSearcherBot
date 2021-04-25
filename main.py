@@ -4,6 +4,13 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageEmpty, MessageNotM
 from config import BOT_TOKEN, RESULTS_COUNT, SUDO_CHATS_ID
 from drive import drive
 from requests import get as g
+import logging
+
+logging.basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+    )
+
+L = logging.getLogger("googleapiclient.discovery")
 
 app = Client(":memory:", bot_token=BOT_TOKEN, api_id=6,
              api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e")
